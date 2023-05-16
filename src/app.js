@@ -12,7 +12,7 @@ const airQuality = 'yes';
 
 const getWeather = city => {
   fetch(
-    `http://api.weatherapi.com/v1/current.json?key=756b142720f34d1dad3184645231502&q=${city}&aqi=${airQuality}`
+    `https://api.weatherapi.com/v1/current.json?key=756b142720f34d1dad3184645231502&q=${city}&aqi=${airQuality}`
   )
     .then(response => response.json())
     .then(data => {
