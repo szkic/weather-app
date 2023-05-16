@@ -8,9 +8,9 @@ const windEl = document.getElementById('wind');
 const pressureEl = document.getElementById('pressure');
 const uvEl = document.getElementById('uv');
 
-const airQuality = 'yes';
+const airQuality = 'no';
 
-const getWeather = city => {
+export const getWeather = city => {
   fetch(
     `https://api.weatherapi.com/v1/current.json?key=756b142720f34d1dad3184645231502&q=${city}&aqi=${airQuality}`
   )
@@ -25,10 +25,9 @@ const getWeather = city => {
       uvEl.innerHTML = `index UV: ${data.current.uv}`;
 
       console.log(data);
-    });
+    })
+    .catch(error => console.log(error));
 };
-
-getWeather('Warsaw');
 
 searchButtonEl.addEventListener('click', e => {
   e.preventDefault();
